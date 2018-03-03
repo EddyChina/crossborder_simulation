@@ -1,0 +1,32 @@
+<div class="container">
+  <div class="row">
+    <form #exchangeForm="ngForm">
+      <mat-form-field>
+        <mat-select name='charset' [(ngModel)]='charset' placeholder='参数字符编码集' required>
+          <mat-option value="UTF-8">UTF-8</mat-option>
+          <mat-option value="GBK">GBK</mat-option>
+          <mat-option value="GB2312">GB2312</mat-option>
+          <mat-option value="GB18030">GB18030</mat-option>
+        </mat-select>
+      </mat-form-field>
+      <br>
+      <mat-form-field>
+        <input matInput name="mer_id" [(ngModel)]='mer_id' placeholder='商户编号' required/>
+      </mat-form-field>
+      <br>
+      <mat-form-field>
+        <input name="batch_date" [max]="maxDate" placeholder="批次日期" matInput [(ngModel)]='batch_date' [matDatepicker]="batch_date_picker" readonly>
+        <mat-datepicker-toggle matSuffix [for]="batch_date_picker"></mat-datepicker-toggle>
+        <mat-datepicker #batch_date_picker></mat-datepicker>
+      </mat-form-field>
+      <br>
+      <mat-form-field>
+        <input matInput name='batch_no' [(ngModel)]='batch_no' placeholder='批次号' required/>
+      </mat-form-field>
+      <br>
+      <button class="btn btn-success" type="submit" [disabled]="!exchangeForm.form.valid">查询验证结果</button>
+      <button class="btn btn-danger">重置</button>
+    </form>
+  </div>
+</div>
+

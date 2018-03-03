@@ -1,0 +1,46 @@
+  <div class="row">
+    <form #exchangeForm="ngForm">
+      <mat-form-field>
+        <mat-select name='charset' [(ngModel)]='charset' placeholder='参数字符编码集' required >
+          <mat-option value="UTF-8">UTF-8</mat-option>
+          <mat-option value="GBK">GBK</mat-option>
+          <mat-option value="GB2312">GB2312</mat-option>
+          <mat-option value="GB18030">GB18030</mat-option>
+        </mat-select>
+      </mat-form-field>
+      <br>
+      <mat-form-field>
+        <input matInput name="mer_id" [(ngModel)]='mer_id' placeholder='商户编号' required />
+      </mat-form-field>
+      <br>
+      <mat-form-field>
+        <input matInput name='notify_url' [(ngModel)]='vo.batch.notify_url' placeholder='服务器异步通知路径' required/>
+      </mat-form-field>
+      <br>
+      <mat-form-field>
+        <input matInput name='file_path' [(ngModel)]='vo.batch.file_path' placeholder='收结汇申请文件存放目录' required/>
+      </mat-form-field>
+      <br>
+      <mat-form-field>
+        <input matInput name='file_name' [(ngModel)]='vo.batch.file_name' placeholder='收结汇申请文件名称' required/>
+      </mat-form-field>
+      <br>
+      <mat-form-field>
+        <input matInput name='currency' [(ngModel)]='vo.batch.currency' placeholder='收结汇申请币种' required/>
+      </mat-form-field>
+      <br>
+      <mat-form-field>
+        <input name="batch_date" [max]="maxDate" placeholder="批次日期" matInput [(ngModel)]='vo.batch.batch_date' [matDatepicker]="picker">
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+      <br>
+      <mat-form-field>
+        <input matInput name='batch_no' [(ngModel)]='vo.batch.batch_no' placeholder='收结汇申请批次号' required/>
+      </mat-form-field>
+      <br>
+      <button class="btn btn-info mr-2" (click)="onExchangeApply()" [disabled]="!exchangeForm.form.valid">申请结汇</button>
+      <button class="btn btn-warning" type="reset">重置</button>
+    </form>
+  </div>
+

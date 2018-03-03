@@ -10,6 +10,7 @@ import {ReceiptFileUploadVO} from '../vo/ReceiptFileUploadVO';
 })
 export class ExchangeApplyComponent extends CbBaseExchangeComponent implements OnInit {
   vo: ReceiptFileUploadVO  = new ReceiptFileUploadVO();
+  maxDate = new Date();
   constructor(exchangeService: CbExchangeService) {
     super(exchangeService);
     this.vo.mer_id = this.mer_id;

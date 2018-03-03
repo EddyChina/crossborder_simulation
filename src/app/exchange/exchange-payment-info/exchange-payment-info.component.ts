@@ -11,7 +11,7 @@ import {QueryRemittanceVO} from '../vo/QueryRemittanceVO';
 export class ExchangePaymentInfoComponent extends CbBaseExchangeComponent implements OnInit {
   service = 'remittance_query';
   vo: QueryRemittanceVO = new QueryRemittanceVO();
-
+  maxDate = new Date();
   ngOnInit() {
     const title = '付款信息查询';
     const subTitle = '模拟商户向联动平台发起【付款信息查询】请求';

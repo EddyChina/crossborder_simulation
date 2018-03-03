@@ -2,7 +2,7 @@
   <div class="row">
     <form #exchangeForm="ngForm">
       <mat-form-field>
-        <mat-select name='charset' [(ngModel)]='charset' placeholder='参数字符编码集' required >
+        <mat-select name='charset' [(ngModel)]='vo.charset' placeholder='参数字符编码集' required >
           <mat-option value="UTF-8">UTF-8</mat-option>
           <mat-option value="GBK">GBK</mat-option>
           <mat-option value="GB2312">GB2312</mat-option>
@@ -11,7 +11,7 @@
       </mat-form-field>
       <br>
       <mat-form-field>
-        <input matInput name="mer_id" [(ngModel)]='mer_id' placeholder='商户编号' required />
+        <input matInput name="mer_id" [(ngModel)]='vo.mer_id' placeholder='商户编号' required />
       </mat-form-field>      <br>
       <mat-form-field>
         <input [(ngModel)]="vo.batch_date" name="batch_date" [max]="maxDate" placeholder="批次日期" matInput [matDatepicker]="picker" readonly>

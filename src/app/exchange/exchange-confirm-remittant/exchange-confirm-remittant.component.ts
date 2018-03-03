@@ -12,6 +12,7 @@ import {ConfirmRemittanceVO} from '../vo/ConfirmRemittanceVO';
 export class ExchangeConfirmRemittantComponent extends CbBaseExchangeComponent implements OnInit {
   service = 'confirm_remittance';
   vo: ConfirmRemittanceVO = new ConfirmRemittanceVO();
+  maxDate = new Date();
   ngOnInit() {
     const title = '确认付款';
     const subTitle = '模拟商户向联动平台发起【付款】请求';

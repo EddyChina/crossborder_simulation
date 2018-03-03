@@ -14,7 +14,6 @@ export class CbBaseExchangeComponent extends CbBaseComponent implements OnInit {
   protected currency = 'USD';
   protected sign_type = 'RSA';
   protected sign = '';
-  protected maxDate = new Date();
 
   constructor(
     protected exchangeService: CbExchangeService

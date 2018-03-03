@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {CbBaseComponent} from '../../cb-base/cb-base.component';
 import {CbBaseExchangeComponent} from '../../cb-base/cb-base-exchange.component';
+import {CbExchangeService} from '../cb-exchange.service';
+import {EnterpriseVo} from '../vo/enterprise-vo';
 
 @Component({
   selector: 'app-cb-exchange-register-enterprise',
@@ -9,11 +11,13 @@ import {CbBaseExchangeComponent} from '../../cb-base/cb-base-exchange.component'
 })
 export class CbExchangeRegisterEnterpriseComponent extends CbBaseExchangeComponent implements OnInit {
   serviceName = 'register_enterprise';
-  enterprise_name = '';
-  enterprise_org_code = '';
-  enterprise_contact = '';
-  enterprise_phone = '';
-  enterprise_email = '';
+  vo: EnterpriseVo = new EnterpriseVo();
+  constructor(exchangeService: CbExchangeService) {
+    super(exchangeService);
+
+    this.vo.mer_id = this.mer_id;
+    this.vo.charset = this.charset;
+  }
   ngOnInit() {
     const title = '企业资质申请/更新';
     const subTitle = '模拟商户向联动平台发起【企业资质申请/更新】请求';

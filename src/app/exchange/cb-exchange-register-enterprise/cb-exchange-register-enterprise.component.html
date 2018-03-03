@@ -2,7 +2,7 @@
   <div class="row">
     <form #exchangeForm="ngForm">
       <mat-form-field>
-        <mat-select name='charset' [(ngModel)]='charset' placeholder='参数字符编码集' required>
+        <mat-select name='charset' [(ngModel)]='vo.charset' placeholder='参数字符编码集' required>
           <mat-option value="UTF-8">UTF-8</mat-option>
           <mat-option value="GBK">GBK</mat-option>
           <mat-option value="GB2312">GB2312</mat-option>
@@ -11,27 +11,27 @@
       </mat-form-field>
       <br>
       <mat-form-field>
-        <input matInput name="mer_id" [(ngModel)]='mer_id' placeholder='商户编号' required/>
+        <input matInput name="mer_id" [(ngModel)]='vo.mer_id' placeholder='商户编号' required/>
       </mat-form-field>
       <br>
       <mat-form-field>
-        <input matInput name='enterprise_name' [(ngModel)]='enterprise_name' placeholder='企业全称' required/>
+        <input matInput name='enterprise_name' [(ngModel)]='vo.enterprise_name' placeholder='企业全称' required/>
       </mat-form-field>
       <br>
       <mat-form-field>
-        <input matInput name='enterprise_org_code' [(ngModel)]='enterprise_org_code' placeholder='企业组织机构代码' required/>
+        <input matInput name='enterprise_org_code' [(ngModel)]='vo.enterprise_org_code' placeholder='企业组织机构代码' required/>
       </mat-form-field>
       <br>
       <mat-form-field>
-        <input matInput name='enterprise_contact' [(ngModel)]='enterprise_contact' placeholder='企业联系人姓名' required/>
+        <input matInput name='enterprise_contact' [(ngModel)]='vo.enterprise_contact' placeholder='企业联系人姓名' required/>
       </mat-form-field>
       <br>
       <mat-form-field>
-        <input matInput name='enterprise_phone' [(ngModel)]='enterprise_phone' placeholder='企业联系电话' required/>
+        <input matInput name='enterprise_phone' [(ngModel)]='vo.enterprise_phone' placeholder='企业联系电话' required/>
       </mat-form-field>
       <br>
       <mat-form-field>
-        <input matInput name='enterprise_email' [(ngModel)]='enterprise_email' placeholder='企业常用邮箱' required/>
+        <input matInput name='enterprise_email' [(ngModel)]='vo.enterprise_email' placeholder='企业常用邮箱' required/>
       </mat-form-field>
       <br>
       <button class="btn btn-success" type="submit" [disabled]="!exchangeForm.form.valid">提交申请</button>
